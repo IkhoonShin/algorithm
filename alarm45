@@ -1,0 +1,38 @@
+package Study_REAL;
+
+import java.util.Scanner;
+
+public class alarm45 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		int h = scanner.nextInt();
+		int m = scanner.nextInt();
+		
+		int hResult = 0;
+		int mResult = 0;
+		
+		if (m>=45) {
+			hResult = h;
+			mResult = m-45;
+		} else if (m<45){
+			hResult = h-1;
+			mResult = m + 60 - 45;
+			if (h==0) {
+				hResult = 23;
+			}
+		} else if (m==0) {
+			hResult = h-1;
+			mResult = 15;
+			if (h==0) {
+				hResult = 23;
+			}
+		}
+		
+		System.out.printf("%d %d", hResult, mResult);
+		
+
+	}//main
+
+}//class
