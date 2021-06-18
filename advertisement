@@ -1,0 +1,43 @@
+package Study_REAL;
+
+import java.util.Scanner;
+
+public class advertisements {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		int l = scanner.nextInt();
+
+		String adv = scanner.next();
+
+		int result = calculateAdv(l, adv);
+		System.out.println(result);
+
+	}//main
+
+	private static int calculateAdv(int l, String adv) {
+
+		StringBuilder sb = new StringBuilder();
+		String doubleAdv = adv+adv;
+
+		int check = 1;
+		int len = 0;
+
+		for (int i = 0; i < adv.length(); i++) {
+			sb.append(adv.charAt(i));
+			len = sb.length();
+			for (int k = 0; k < l/(i+1); k++) {
+				if( !sb.toString().equals( doubleAdv.substring(k*len, len + len*k)) ) check++;
+				System.out.println(doubleAdv.substring(k*len, len + len*k) + " " +check);
+				if( (len+len*k) > l) break;
+			}
+			if(check==1) break;
+			check=1;
+		}
+
+		return sb.length();
+
+	}
+
+}//class
