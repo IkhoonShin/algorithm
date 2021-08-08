@@ -1,0 +1,36 @@
+package Study_REAL;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class SumTwoNum {
+
+	public static void main(String[] args) {
+		
+		int [] numbers = {5, 0, 2, 7};
+		
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < numbers.length; i++) {
+			for (int j = 0; j < numbers.length; j++) {
+				if (i != j) {
+					int sum = 0;
+					sum = numbers[i] + numbers[j];
+					if (!list.contains(sum)) {
+						list.add(sum);
+					}
+				}//if
+			}//for2
+		}//for1
+		
+		Collections.sort(list);
+		int [] answer = new int[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			answer[i] = list.get(i);
+		}
+		
+		System.out.println(Arrays.toString(answer));
+	}//main
+
+}//class
