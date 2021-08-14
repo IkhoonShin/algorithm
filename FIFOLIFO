@@ -1,0 +1,43 @@
+package Study_REAL;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class tmaxTest3 {
+
+	public static void main(String[] args) {
+		String [] record = {"P 300 6", "P 500 3", "S 1000 4", "P 600 2", "S 1200 1"};
+		Queue<String> 구입 = new LinkedList<String>();
+		Stack<String> 구입2 = new Stack<String>();
+		
+		int 선입선출금 = 0;
+		int 후입선출금 = 0;
+		
+		for (int i = 0; i < record.length; i++) {
+			if (record[i].startsWith("P")) {
+				String [] 구입s = record[i].split(" ");
+				int 구입개수 = Integer.parseInt(구입s[2]);
+				for (int j = 0; j < 구입개수; j++) {
+					구입.offer(구입s[1]);
+					구입2.push(구입s[1]);
+				}
+			} else {
+				String [] 판매s = record[i].split(" ");
+				int 판매개수 = Integer.parseInt(판매s[2]);
+				for (int j = 0; j < 판매개수; j++) {
+					int 선입선출 = Integer.parseInt(구입.poll());
+					int 후입선출 = Integer.parseInt(구입2.pop());
+					선입선출금 += 선입선출;
+					후입선출금 += 후입선출;
+				}
+			}
+		}
+		
+		System.out.println(선입선출금);
+		System.out.println(후입선출금);
+		
+		
+	}
+		
+}
