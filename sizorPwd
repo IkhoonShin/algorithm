@@ -1,0 +1,38 @@
+package Study_REAL;
+
+import java.util.Arrays;
+
+public class sizorPwd {
+
+	public static void main(String[] args) {
+		String s = "a B z";
+		int n = 4;
+		
+		int [] ns = new int[s.length()];
+		String answer = "";
+		for (int i = 0; i < ns.length; i++) {
+			ns[i] = (int)s.charAt(i);
+			if (ns[i] >= 65 && ns[i] <= 90 ) {
+				ns[i] += n;
+				if (ns[i] > 90) {
+					ns[i] -= 26;
+				}
+			} else if (ns[i] >= 97 && ns[i] <= 122) {
+				ns[i] += n;
+				if (ns[i] > 122) {
+					ns[i] -= 26;
+				}
+			}
+			answer += (char)ns[i];
+		}
+		
+		
+		System.out.println(Arrays.toString(ns));
+		System.out.println(answer);
+		
+		
+		
+
+	}//main
+
+}//class
