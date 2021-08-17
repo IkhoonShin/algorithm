@@ -1,0 +1,25 @@
+package Study_REAL;
+
+import java.util.ArrayList;
+
+public class plusAllNum {
+
+	public static void main(String[] args) {
+		int n = 987;
+		
+		String nStr = n + "";
+		ArrayList<String> nList = new ArrayList<String>();
+		int answer = 0;
+		for (int i = 0; i < nStr.length()-1; i++) {
+			nList.add(nStr.substring(i, i+1));
+		}
+		nList.add(nStr.substring(nStr.length()-1));
+		
+		for (int i = 0; i < nStr.length(); i++) {
+			answer += Integer.parseInt(nList.get(i));
+		}
+		System.out.println(answer);
+
+	}//main
+
+}//class
