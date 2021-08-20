@@ -1,0 +1,28 @@
+package Study_REAL;
+
+import java.util.Arrays;
+
+public class gongMaxMin {
+
+	public static void main(String[] args) {
+		int n = 24;
+		int m = 36;
+		
+		int a = Math.max(m, n);
+		int b = Math.min(m,  n);
+		
+		int [] answer = new int[2];
+		answer[0] = minMax(a, b);
+		answer[1] = a * b / answer[0];
+		
+		System.out.println(Arrays.toString(answer));
+	}//main
+
+	private static int minMax(int a, int b) {
+		if (a % b == 0) {
+			return b;
+		}
+		return minMax(b, a % b);
+	}//minMax
+
+}//class
