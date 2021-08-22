@@ -1,0 +1,18 @@
+package Study_REAL;
+
+public class checkString {
+
+	public static void main(String[] args) {
+		String s = "1234";
+		boolean answer = false;
+		
+		if (s.length() == 4 || s.length() == 6) {
+			String regex = "^[0-9]*$";
+			if (s.matches(regex)) answer = true;
+		}
+		
+		System.out.println(answer);
+
+	}//main
+
+}//class
