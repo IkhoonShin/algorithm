@@ -1,0 +1,24 @@
+package Study_REAL;
+
+import java.util.Arrays;
+
+public class turnAroundNum {
+
+	public static void main(String[] args) {
+		long n = 12345;
+		String nStr = n + "";
+		
+		int [] answer = new int[nStr.length()];
+		int cnt = 0;
+		
+		while (n > 0) {
+            answer[cnt] = (int) (n % 10);
+            n /= 10;
+            cnt++;
+        }      
+		
+		System.out.println(Arrays.toString(answer));
+
+	}//main
+
+}//class
